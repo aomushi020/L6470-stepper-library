@@ -3,10 +3,11 @@
     by aomushi020
 
     Board(Archtecture)s
-      Uno
-      Mega/Mega2560
-      ESP8266
-    
+        Uno
+        Mega/Mega2560
+        ESP8266
+        ESP32(M5Stack)
+        RP2040
 */
 
 #ifndef L6470_h
@@ -101,6 +102,8 @@ class L6470{
     void hardStop(void);
     void softStop(void);
     void goHome(void);
+    unsigned int calcSpeedValue(unsigned long _target_spd, unsigned int _wheel_diameter);
+    unsigned int calcTurnValue(unsigned long _target_turn_deg, unsigned int _wheel_diameter, unsigned int _wheel_pitch);
   private:
     unsigned short _L6470_SPI_SS;
     unsigned short _L6470_SIG_BS;
