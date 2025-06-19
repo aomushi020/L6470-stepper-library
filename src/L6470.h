@@ -8,6 +8,7 @@
         ESP8266
         ESP32(M5Stack)
         RP2040
+        Spresense
 */
 
 #ifndef L6470_h
@@ -33,6 +34,11 @@
   #define L6470_SPI_MOSI  23
   #define L6470_SPI_MISO  19
   #define L6470_SPI_SCK   18
+#elif defined(ARDUINO_ARCH_RP2040) && defined(ARDUINO_ARCH_MBED)
+// RP2040
+#elif defined(ARDUINO_ARCH_RP2040) && !defined(ARDUINO_ARCH_MBED)
+// RP2040(earlephilhower)
+#elif defined(-DARDUINO_ARCH_SPRESENSE)
 #else
   #define L6470_SPI_MOSI  11
   #define L6470_SPI_MISO  12
