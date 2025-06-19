@@ -36,9 +36,19 @@
   #define L6470_SPI_SCK   18
 #elif defined(ARDUINO_ARCH_RP2040) && defined(ARDUINO_ARCH_MBED)
 // RP2040
+  #define L6470_SPI_MOSI  (19u)
+  #define L6470_SPI_MISO  (16u)
+  #define L6470_SPI_SCK   (18u)
 #elif defined(ARDUINO_ARCH_RP2040) && !defined(ARDUINO_ARCH_MBED)
 // RP2040(earlephilhower)
+  #define L6470_SPI_MOSI  (19u)
+  #define L6470_SPI_MISO  (16u)
+  #define L6470_SPI_SCK   (18u)
 #elif defined(-DARDUINO_ARCH_SPRESENSE)
+// Spresense
+  #define L6470_SPI_MOSI  11
+  #define L6470_SPI_MISO  12
+  #define L6470_SPI_SCK   13
 #else
   #define L6470_SPI_MOSI  11
   #define L6470_SPI_MISO  12
