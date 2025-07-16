@@ -19,18 +19,22 @@
 #define L6470_SET_SPI_PINS
 
 #ifdef defined(ARDUINO_AVR_UNO)
+// Uno
   #define L6470_SPI_MOSI  11
   #define L6470_SPI_MISO  12
   #define L6470_SPI_SCK   13
 #elif defined(ESP8266)
+// ESP8266
   #define L6470_SPI_MOSI  13
   #define L6470_SPI_MISO  12
   #define L6470_SPI_SCK   14
 #elif defined(ARDUINO_AVR_MEGA) || defined(ARDUINO_AVR_MEGA2560)
+// MEGA/MEGA2560
   #define L6470_SPI_MOSI  51
   #define L6470_SPI_MISO  50
   #define L6470_SPI_SCK   52
 #elif defined(_M5STACK_H_)
+// M5Stack
   #define L6470_SPI_MOSI  23
   #define L6470_SPI_MISO  19
   #define L6470_SPI_SCK   18
