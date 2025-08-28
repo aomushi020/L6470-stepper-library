@@ -14,6 +14,10 @@
 #ifndef L6470_h
 #define L6470_h
 
+#include <Arduino.h>
+#include <stdint.h>
+#include <SPI.h>
+
 // SPI PINS
 #ifndef L6470_SET_SPI_PINS
 #define L6470_SET_SPI_PINS
@@ -48,7 +52,7 @@
   #define L6470_SPI_MOSI  (19u)
   #define L6470_SPI_MISO  (16u)
   #define L6470_SPI_SCK   (18u)
-#elif defined(-DARDUINO_ARCH_SPRESENSE)
+#elif defined(DARDUINO_ARCH_SPRESENSE)
 // Spresense
   #define L6470_SPI_MOSI  11
   #define L6470_SPI_MISO  12

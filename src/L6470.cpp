@@ -4,8 +4,6 @@
 */
 
 #include "L6470.h"
-#include "Arduino.h"
-#include <SPI.h>
 
 SPISettings _spiSettings(1000000, MSBFIRST, SPI_MODE3);
 
