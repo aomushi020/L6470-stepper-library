@@ -109,29 +109,30 @@ class L6470{
     L6470(unsigned short _SPI_SS);
     L6470(unsigned short _SPI_SS,short _L6470_BS,short _L6470_SR);
     void begin(void);
-    void setMaxSpeed(unsigned int _L6470_payload);
-    void setHoldVoltage(unsigned char _L6470_payload);
-    void setRunVoltage(unsigned char _L6470_payload);
-    void setAccelVoltage(unsigned char _L6470_payload);
-    void setDecelVoltage(unsigned char _L6470_payload);
-    void setSteps(unsigned char _L6470_payload);
-    void run(unsigned char _dir,unsigned long _spd);
-    void move(unsigned char _dir,unsigned long _steps);
-//    void move2step(unsigned char _dir,unsigned long _steps);
-//    void move2cm(unsigned char _dir,unsigned int _cm);
+    void setConfig(uint16_t _L6470_payload);
+    void setMaxSpeed(uint16_t _L6470_payload);
+    void setHoldVoltage(uint8_t _L6470_payload);
+    void setRunVoltage(uint8_t _L6470_payload);
+    void setAccelVoltage(uint8_t _L6470_payload);
+    void setDecelVoltage(uint8_t _L6470_payload);
+    void setSteps(uint8_t _L6470_payload);
+    void run(uint8_t _dir,unsigned long _spd);
+    void move(uint8_t _dir,unsigned long _steps);
+//    void move2step(uint8_t _dir,unsigned long _steps);
+//    void move2cm(uint8_t _dir,unsigned int _cm);
     void hardStop(void);
     void softStop(void);
     void goHome(void);
-    unsigned int calcSpeedValue(unsigned long _target_spd, unsigned int _wheel_diameter);
-    unsigned int calcTurnValue(unsigned long _target_turn_deg, unsigned int _wheel_diameter, unsigned int _wheel_pitch);
+    // unsigned int calcSpeedValue(unsigned long _target_spd, unsigned int _wheel_diameter);
+    // unsigned int calcTurnValue(unsigned long _target_turn_deg, unsigned int _wheel_diameter, unsigned int _wheel_pitch);
   private:
     unsigned short _L6470_SPI_SS;
     unsigned short _L6470_SIG_BS;
     unsigned short _L6470_SIG_SR;
     static boolean _L6470_SPI_SETUP;
     static boolean _L6470_SPI_BEGIN;
-    void _spiwrite(unsigned char _L6470_payload);
-    unsigned long calcCm2Steps(unsigned int _cm);
+    void _spiwrite(uint8_t _L6470_payload);
+    // unsigned long calcCm2Steps(uint16_t _cm);
 };
 
 #endif
